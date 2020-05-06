@@ -6,4 +6,5 @@ Very Simple Unity Spine runtime support from ProvisGames
 
 - - -  
 # Contents
-[RespectRectTransform](https://github.com/ggzerosum/SpineUtility/tree/master/RespectRectTransform)
+1. [RespectRectTransform](https://github.com/ggzerosum/SpineUtility/tree/master/RespectRectTransform)
+Keep SkeletonGraphic tracking RectTranform's rect bounds.
