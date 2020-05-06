@@ -42,3 +42,7 @@ so, if you have certain script that control spine skeleton's scale, it can not p
 
 ### Spine doesn't have fixed mesh bound!!
 You should select animation that has mesh bound that you want to make as standard.
+
+# Test
+Tested in Unity 2019.3.0f
+Spine runtime 3.8 (Updated 2020-05-05)
