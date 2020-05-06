@@ -37,6 +37,8 @@ this by pressed button.
 After stop update, you should press Resize Button manually to visualize spine rescaling.
 
 # Caustion!
+### This Script control Skeleton's Scale
+so, if you certain script that control scale, it can not perform properly.
 
 ### Spine doesn't have fixed mesh bound!!
 You should select animation that has mesh bound that you want to make as standard.
