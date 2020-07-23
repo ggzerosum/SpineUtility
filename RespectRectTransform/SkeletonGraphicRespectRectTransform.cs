@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine;
@@ -19,6 +19,8 @@ namespace ProvisGames.Core.SpineSupport
     {
         [SerializeField] private SkeletonGraphic skeletonGraphic;
         [SerializeField] private bool m_preserveAspectRatio = true;
+        [Header("Call skeletonGraphic.SetToSetupPose when scale changed")]
+        [SerializeField] private bool m_SetToSetupPoseWhenScaling = false;
         [HideInInspector] public bool m_isEditorUpdateStopped = false;
 
         // Cache initial bound & skeleton scale for standard of size change
@@ -99,7 +101,9 @@ namespace ProvisGames.Core.SpineSupport
             this.skeletonGraphic.Skeleton.ScaleX = x;
             this.skeletonGraphic.Skeleton.ScaleY = y;
 
-            this.skeletonGraphic.Skeleton.SetToSetupPose();
+            if (m_SetToSetupPoseWhenScaling)
+                this.skeletonGraphic.Skeleton.SetToSetupPose();
+
             this.skeletonGraphic.Skeleton.UpdateWorldTransform();
         }
 
