@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine;
@@ -105,7 +105,7 @@ namespace ProvisGames.Core.SpineSupport
 
         public bool CacheRectTransformWithBounds()
         {
-            bool result = this.skeletonGraphic.MatchRectTransformWithBounds();
+            bool result = MatchRectTransformWithBounds_lowVersionCompatablity(this.skeletonGraphic);
             if (result) CacheSize();
 
             return result;
@@ -114,6 +114,37 @@ namespace ProvisGames.Core.SpineSupport
         {
             m_initialRectWithBounds = this.skeletonGraphic.GetPixelAdjustedRect();
             m_initialSpineSkeletonScale = new Vector2(this.skeletonGraphic.Skeleton.ScaleX, this.skeletonGraphic.Skeleton.ScaleY);
+        }
+
+        private bool MatchRectTransformWithBounds_lowVersionCompatablity(SkeletonGraphic skeletonGraphic)
+        {
+            skeletonGraphic.UpdateMesh();
+
+            Mesh mesh = skeletonGraphic.GetLastMesh();
+            if (mesh == null)
+            {
+                return false;
+            }
+
+            if (mesh.vertexCount == 0)
+            {
+                skeletonGraphic.rectTransform.sizeDelta = new Vector2(50f, 50f);
+                skeletonGraphic.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+                return false;
+            }
+
+            mesh.RecalculateBounds();
+            var bounds = mesh.bounds;
+            var size = bounds.size;
+            var center = bounds.center;
+            var p = new Vector2(
+                0.5f - (center.x / size.x),
+                0.5f - (center.y / size.y)
+            );
+
+            skeletonGraphic.rectTransform.sizeDelta = size;
+            skeletonGraphic.rectTransform.pivot = p;
+            return true;
         }
     }
 
