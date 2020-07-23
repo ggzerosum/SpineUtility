@@ -9,11 +9,11 @@ Just Attach component with skeletonGraphic.
 If skeletonGraphic already attached, this component will detect it.
 
 If not, or need to reset, Click reset button of context menu.
-![image](https://user-images.githubusercontent.com/14087406/81152603-114be980-8fbd-11ea-906b-a4040a550e57.png)  
+![image](https://user-images.githubusercontent.com/14087406/88248419-1bd47000-ccdc-11ea-89d5-52ca5847d138.png) 
 
 
 # Description!
-![image](https://user-images.githubusercontent.com/14087406/81151472-fc228b00-8fbb-11ea-9233-e4e4b78db3ce.png)  
+![image](https://user-images.githubusercontent.com/14087406/88248452-3a3a6b80-ccdc-11ea-97a7-7deb6e9e206b.png) 
 
 ### skeletonGraphic 
 find & bind skeletonGraphic you want to respect RectTransform
@@ -21,6 +21,10 @@ find & bind skeletonGraphic you want to respect RectTransform
 ### PreserveAspectRatio
 Alway keep aspect ratio of cached size.
 when 1)attach or 2)reset this component or 3)press Fit&Cache Button mesh bound of spine automatically cached.
+
+### m_SetToSetupPoseWhenScaling
+By default, SetToSetupPos not calling when scaling.
+Related Issue #2.
 
 ### Fit & Cache Button
 Cache Current Mesh bound of current spine animation and rescale spine skeleton.
