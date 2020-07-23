@@ -23,7 +23,7 @@ Alway keep aspect ratio of cached size.
 when 1)attach or 2)reset this component or 3)press Fit&Cache Button mesh bound of spine automatically cached.
 
 ### SetToSetupPoseWhenScaling
-By default, SetToSetupPos not calling when scaling.
+By default, SetToSetupPose not called when scalling.
 Related Issue #2.
 
 ### Fit & Cache Button
