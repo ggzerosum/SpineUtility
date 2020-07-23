@@ -22,7 +22,7 @@ find & bind skeletonGraphic you want to respect RectTransform
 Alway keep aspect ratio of cached size.
 when 1)attach or 2)reset this component or 3)press Fit&Cache Button mesh bound of spine automatically cached.
 
-### m_SetToSetupPoseWhenScaling
+### SetToSetupPoseWhenScaling
 By default, SetToSetupPos not calling when scaling.
 Related Issue #2.
 
